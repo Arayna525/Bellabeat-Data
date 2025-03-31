@@ -1,0 +1,72 @@
+read.csv("")
+setwd("C:/documents")
+getwd()
+read.csv("C:/Users/RayRays Surface/Documents/Capstone Project Data/sleepDay_merged.csv")
+View("C:/Users/RayRays Surface/Documents/Capstone Project Data/sleepDay_merged.csv")
+View("C:/Users/RayRays Surface/Documents/Capstone Project Data/sleepDay_merged.csv")
+read.csv("C:/Users/RayRays Surface/Documents/Capstone Project Data/minuteSleep_merged.csv")
+read.csv("C:/Users/RayRays Surface/Documents/Capstone Project Data/dailyActivity_merged.csv")
+read.csv("C:/Users/RayRays Surface/Documents/Capstone Project Data/dailyActivity_merged.csv", header = TRUE, sep = ",")
+activitydata <- read.csv("C:/Users/RayRays Surface/Documents/Capstone Project Data/dailyActivity_merged.csv", header = TRUE, sep = ",")
+View(activitydata)
+sleepdata <- read.csv("C:/Users/RayRays Surface/Documents/Capstone Project Data/sleepDay_merged.csv")
+View(sleepdata)
+glimpse(sleepdata)
+head(sleepdata)
+glimpse(sleepdata)
+Glimpse(sleepdata)
+colnames(sleepdata)
+colnames(activitydata)
+complet_master = merge(activitydata, sleepdata, by="Id")
+complete_master <- complet_master
+complete_master = merge(activitydata, sleepdata, by="Id")
+Glimpse(complet_master)
+head(complete_master)
+colnames(complete_master)
+str(complet_master)
+combined2 <- merge(x = activitydata, y = sleepdata, by.x = c("Id", "Date"), by.y = c("Id", "Date"), All = TRUE)
+
+ggplot(data = activitydata) +
+ geom_bar(mapping = aes(x= median(VeryActiveMinutes))
+
+summary_results <- rbind(summary_results, c("Totals", colSums(x[,3:6])))
+
+avg_veryactiveminuets <- 21.16
+avg_fairlyactiveminutes <- 13.56
+avg_lightlyactiveminutes <- 192.8
+avg_sedentaryminutes <- 991.2
+
+View(mean_activity)
+  
+activity_average < - c(21.6,13.56, 192.8, 991.2)
+
+rownames(mean_activity) = "VeryActiveMinutes", "FairlyActiveMinutes", "LightlyActiveMinutes", "SedentaryMinutes"
+View(mean_activity)
+
+colnames(mean_activity) = c("VeryActiveMinutes", "FairlyActiveMinutes", "LightlyActiveMinutes", "SedentaryMinutes")
+name = c("VeryActiveMinutes", "FairlyActiveMinutes", "LightlyActiveMinutes", "SedentaryMinutes")
+value = c("21.6","13.56", "192.8", "991.2")
+
+# sort by mpg
+newdata <- mean_activity[order(average_minutes),]
+
+ggplot(mean_activity, aes(x= name, y=value)) + 
+  geom_bar(stat = "identity")
+
+activity.long <- pivot_longer(mean_activity, cols=1:4, names = "VeryActive", "FairlyActive", "LightlyActive", "Sedentary", values_to = "Average")
+
+activity_intensity <- c("FairlyActive", "Sedentary", "LightlyActive", "Sedentary")
+average_minutes <- c("21.6","13.56", "192.8", "991.2")
+
+mean_activity <- data.frame (activity_intensity, average_minutes)
+print(mean_activity)
+print(newdata)
+rm(newdata)
+
+arrange(mean_activity, average_minutes)
+mean_activity$average_minutes <- as.integer(mean_activity$average_minutes)
+newdata <- mean_activity[order(average_minutes),]
+print(mean_activity)
+
+ggplot(mean_activity, aes(x= activity_intensity, y= average_minutes)) + 
+  geom_bar(stat = "identity", fill = 'purple')
